@@ -1,0 +1,41 @@
+The trained model framework ultimately uses the following input variables:
+
+- Lat,
+- Long,
+- Elevation (from 20m resolution DEM),
+- Aspect (derived from DEM),
+- Slope (derived from DEM),
+- Aridity Index (Priestley-Taylor method; 20m resolution),
+- Mean annual rainfall,
+- Mean solar radiation,
+- Cover Fraction (from Gill et al., 2017),
+- Day of Year,
+
+From the Australian Bureau of Meteorology's Access-C NWP model (Puri et al., 2013), the following *purchaseable* data are used (product names are denoted within parentheses):
+- Temperature (T_SFC),
+- Relative humidity (RH_SFC),
+- Sky cover (Sky_SFC),
+- 75% chance of more than ? (mm) of total daily precipitation (DailyPrecip75Pct_SFC),
+- 50% chance of more than ? (mm) of total daily precipitation (DailyPrecip50Pct_SFC),
+- 25% chance of more than ? (mm) of total daily precipitation (DailyPrecip25Pct_SFC),
+- 10% chance of more than ? (mm) of total daily precipitation (DailyPrecip10Pct_SFC),
+- Probability (%) of any rain in day (DailyPoP_SFC),
+- Apparent temperature (ApparentT_SFC),
+- Dewpoint temperature (Td_SFC),
+- Daily chance of at least 1 mm precipitation (%) (DailyPoP1_SFC),
+- Daily chance of at least 5 mm precipitation (%) (DailyPoP5_SFC),
+- Daily chance of at least 10 mm precipitation (%) (DailyPoP10_SFC),
+- Daily chance of at least 15 mm precipitation (%) (DailyPoP15_SFC),
+- Daily chance of at least 25 mm precipitation (%) (DailyPoP25_SFC),
+- Wind speed (km/h) (WindMagKmh_SFC),
+- Wind direction (degrees true) (Wind_Dir_SFC),
+
+From AWRA-L v7 (Frost & Shokri, 2021; https://awo.bom.gov.au/products/historical/), the:
+- Daily Actual evapotranspiration,
+- Daily precipitation,
+- Daily root zone soil moisture,
+
+From the Australian Flammability Monitoring System (Yebra et al., 2018; http://wenfo.org/afms), the:
+- Live fuel moisture content
+
+The input structure of such variables can be seen in 'Model_input_data_structures/day_x_template.csv'
