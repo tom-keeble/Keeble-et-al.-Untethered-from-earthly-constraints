@@ -28,7 +28,3 @@ The `LSO_analysis.py` script contains the method utilised to conduct the leave-s
 Thomas Keeble, Chris Lyell, Gary Sheridan (Forest Hydrology Research Group, The University of Melbourne, Parkville, VIC 3010, Australia)
 Tim Gazzard (Department of Environment, Energy, and Climate Action)
 Thomas Duff (Country Fire Authority)
-
-
-## License
-This resource is shared under the Creative Commons Attribution [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
