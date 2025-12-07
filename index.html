@@ -17,47 +17,70 @@
     .wrap {
       width:100%;
       max-width:1200px;
+      position:relative; /* allow absolutely positioned header */
     }
 
-    /* Title at top */
+    /* Top row: title on the left, logos on the right */
+    .top-row {
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:1rem;
+      margin-bottom:0.75rem;
+    }
+
+    /* Title (left) */
     .page-title {
-      text-align:center;
+      text-align:left;
       font-size:1.6rem;
-      margin:0 0 1rem 0;
+      margin:0;
       color:#111;
       font-weight:600;
+      flex:1 1 auto;
     }
 
-    /* Two logos aligned to the right */
+    /* Logos (right) */
     .page-header {
       display:flex;
-      justify-content:flex-end;
-      gap:1.5rem;
-      margin-bottom:1rem;
+      gap:1.25rem;
+      align-items:flex-start;
+      flex:0 0 auto;
     }
 
+    /* Make each logo container a fixed-size box so presence/absence of text doesn't change overall size */
     .logo-container {
+      position:relative;
+      width:120px;
+      height:120px;
       display:flex;
-      flex-direction:column;
       align-items:center;
       justify-content:center;
-      gap:0.35rem;
-      line-height:1.05;
+      box-sizing:border-box;
+      padding:0.25rem;
     }
 
+    /* Constrain logo images so they share the same visible height */
     .logo-container img.logo {
       display:block;
-      max-width:120px;
+      max-width:100%;
+      max-height:72px;
       height:auto;
       border:0;
     }
 
+    /* Position any descriptive text absolutely so it doesn't change container height */
     .logo-text {
+      position:absolute;
+      bottom:6px;
+      left:50%;
+      transform:translateX(-50%);
       font-size:0.9rem;
       color:#111;
       font-weight:600;
       text-align:center;
       white-space:pre-line;
+      line-height:1.05;
+      max-width:100%;
     }
 
     img.responsive {
@@ -66,6 +89,7 @@
       height:auto;
       max-width:100%;
       border:0;
+      margin-top:0.75rem;
     }
 
     /* Abstract block */
@@ -80,10 +104,13 @@
       box-sizing:border-box;
     }
 
-    @media (max-width:480px) {
-      .logo-container img.logo { max-width:80px; }
-      .logo-text { font-size:0.8rem; }
-      .page-title { font-size:1.3rem; }
+    @media (max-width:768px) {
+      .top-row { flex-direction:column; align-items:center; }
+      .page-title { text-align:center; font-size:1.25rem; }
+      .page-header { margin-top:0.5rem; }
+      .logo-container { width:100px; height:100px; }
+      .logo-container img.logo { max-height:64px; }
+      .logo-text { font-size:0.85rem; }
     }
   </style>
 </head>
@@ -96,18 +123,37 @@
         Keeble et al., 2025. Untethered from earthly constraints: A spatial seven-day ahead machine-learning forest fuel moisture forecasting system, independent of real-time sensor networks
       </h1>
 
-      <header class="page-header" aria-label="Page header">
-        <div class="logo-container">
-          <img class="logo" src="www/wiinya_logo.png" alt="Wiinya Environmental Research Group logo" />
-          <div class="logo-text">Wiinya
-Environmental Research Group</div>
-        </div>
-        <div class="logo-container">
-        <img class="logo" src="www/FHRG_logo.png" alt="Forest Hydrology Research Group logo" />
-        <div class="logo-text" aria-hidden="true">&nbsp;</div>
-        </div>
-      </header>
+      <header style="display:flex; align-items:flex-start; gap:2rem;">
+  <div class="logo-column" style="display:flex; flex-direction:column; align-items:center; width:140px;">
+    <div class="logo-container" style="margin-bottom:1rem;">
+      <img class="logo" src="www/FHRG_logo.png" alt="Forest Hydrology Research Group logo" style="max-width:100%; height:auto;" />
     </div>
+    <div class="logo-container">
+      <img class="logo" src="www/Winya_logo.png" alt="Wiinya group logo" style="max-width:100%; height:auto;" />
+      <div class="logo-text" style="font-size:0.8rem; text-align:center; margin-top:0.25rem;">Wiinya Environmental Research Group</div>
+    </div>
+  </div>
+
+</header>
+    </div>
+    <h1 class="page-title">
+      Keeble et al., 2025. Untethered from earthly constraints: A spatial seven-day ahead machine-learning forest fuel moisture forecasting system, independent of real-time sensor networks
+    </h1>
+
+    <!-- Two right‑aligned logos -->
+    <header class="page-header" aria-label="Page header">
+      <div class="logo-container">
+        <img class="logo" src="www/wiinya_logo.png" alt="Wiinya Environmental Research Group logo" />
+        <div class="logo-text">Wiinya
+Environmental Research Group</div>
+      </div>
+      <div class="logo-container">
+        <img class="logo" src="www/FHRG_logo.png" alt="Flinders Human–Environment Research Group logo" />
+        <div class="logo-text">Flinders
+Human–Environment
+Research Group</div>
+      </div>
+    </header>
 
     <!-- Forecast GIF -->
     <img
@@ -116,9 +162,9 @@ Environmental Research Group</div>
       alt="Seven‑day ahead machine‑learning forest fuel moisture forecast animation"
     />
 
-    <!-- Abstract -->
+    <!-- Abstract placeholder (user to fill) -->
     <h2 class="abstract-title" style="font-weight:bold; margin-top:1rem;">Abstract</h2>
-    <div class="abstract">
+<div class="abstract">
       <p><em>Dead fuel moisture content (DFMC) critically influences wildfire behaviour, and its modelling underpins many fire management decision support systems. Recent modelling advances have enabled accurate forecast of point-scale fuel moisture, but their reliance on continuous real-time sensor functionality creates operational vulnerabilities when sensors may fail. Maintaining sensor networks across large, remote domains is costly and unreliable. Therefore, we developed a spatially continuous DFMC forecast system that eliminates real-time sensor dependency by replacing sensor initialisation with remotely sensed and modelled proxies for landscape fuel moisture states. Using 23,354 site-day observations from 27 forested sites in Victoria, Australia, our machine learning model produces 7-day ahead sub-canopy DFMC forecasts with median RMSE of 11.5% and 12.8% for day 1 and 7. The approach delivers reliable spatial forecasts across forested landscapes without sensor-dependent vulnerabilities, representing a significant advancement in operational fire risk management by providing comprehensive coverage for wildfire suppression planning and prescribed burning.</em></p>
     </div>
 
