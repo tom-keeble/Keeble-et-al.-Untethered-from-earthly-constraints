@@ -91,6 +91,25 @@
       box-sizing:border-box;
     }
 
+    /* Footer */
+    .footer {
+      margin-top:3rem;
+      padding:2rem 0.5rem 1rem 0.5rem;
+      text-align:center;
+      font-size:0.9rem;
+      line-height:1.6;
+      color:#555;
+      border-top:1px solid #ddd;
+    }
+
+    .footer p {
+      margin:0 0 0.75rem 0;
+    }
+
+    .footer p:last-child {
+      margin-bottom:0;
+    }
+
     @media (max-width:768px) {
       .top-row { flex-direction:column; align-items:center; }
       .page-title { text-align:center; font-size:1.25rem; }
@@ -133,6 +152,12 @@
     <div class="abstract">
       <p><em>Dead fuel moisture content (DFMC) critically influences wildfire behaviour, and its modelling underpins many fire management decision support systems. Recent modelling advances have enabled accurate forecast of point-scale fuel moisture, but their reliance on continuous real-time sensor functionality creates operational vulnerabilities when sensors may fail. Maintaining sensor networks across large, remote domains is costly and unreliable. Therefore, we developed a spatially continuous DFMC forecast system that eliminates real-time sensor dependency by replacing sensor initialisation with remotely sensed and modelled proxies for landscape fuel moisture states. Using 23,354 site-day observations from 27 forested sites in Victoria, Australia, our machine learning model produces 7-day ahead sub-canopy DFMC forecasts with median RMSE of 11.5% and 12.8% for day 1 and 7. The approach delivers reliable spatial forecasts across forested landscapes without sensor-dependent vulnerabilities, representing a significant advancement in operational fire risk management by providing comprehensive coverage for wildfire suppression planning and prescribed burning.</em></p>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>I acknowledge the traditional custodians of the stolen-never-ceded lands I live, work, and think on, the people of the Kulin Nations.</p>
+      <p>© 2025 <a href="https://tom-keeble.github.io/">Tom Keeble</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a></p>
+    </footer>
 
   </div>
 </body>
