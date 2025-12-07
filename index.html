@@ -33,10 +33,9 @@
     .page-title {
       text-align:left;
       font-size:1.6rem;
-      margin:0;
+      margin:0 0 0.5rem 0;
       color:#111;
       font-weight:600;
-      flex:1 1 auto;
     }
 
     /* Logos column (right) */
@@ -104,9 +103,19 @@
 
     <!-- Top row: title with logos at same level -->
     <div class="top-row">
-      <h1 class="page-title">
-        Keeble et al., 2025. Untethered from earthly constraints: A spatial seven-day ahead machine-learning forest fuel moisture forecasting system, independent of real-time sensor networks
-      </h1>
+      <div style="flex: 1 1 auto;">
+        <h1 class="page-title">
+          Keeble et al., 2025. Untethered from earthly constraints: A spatial seven-day ahead machine-learning forest fuel moisture forecasting system, independent of real-time sensor networks
+        </h1>
+        
+        <!-- Forecast GIF -->
+        <img
+          class="responsive"
+          src="www/7day_forecast.gif"
+          alt="Seven‑day ahead machine‑learning forest fuel moisture forecast animation"
+          style="max-width: 500px; margin-top: 0;"
+        />
+      </div>
 
       <div class="logo-column">
         <div class="logo-item">
@@ -118,13 +127,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Forecast GIF -->
-    <img
-      class="responsive"
-      src="www/7day_forecast.gif"
-      alt="Seven‑day ahead machine‑learning forest fuel moisture forecast animation"
-    />
 
     <!-- Abstract placeholder (user to fill) -->
     <h2 class="abstract-title" style="font-weight:bold; margin-top:1rem;">Abstract</h2>
