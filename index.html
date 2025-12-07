@@ -17,23 +17,34 @@
     .wrap {
       width:100%;
       max-width:1200px;
+      position:relative; /* allow absolutely positioned header */
     }
 
-    /* Title at top */
+    /* Top row: title on the left, logos on the right */
+    .top-row {
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:1rem;
+      margin-bottom:0.75rem;
+    }
+
+    /* Title (left) */
     .page-title {
-      text-align:center;
+      text-align:left;
       font-size:1.6rem;
-      margin:0 0 1rem 0;
+      margin:0;
       color:#111;
       font-weight:600;
+      flex:1 1 auto;
     }
 
-    /* Two logos aligned to the right */
+    /* Logos (right) */
     .page-header {
       display:flex;
-      justify-content:flex-end;
-      gap:1.5rem;
-      margin-bottom:1rem;
+      gap:1.25rem;
+      align-items:flex-start;
+      flex:0 0 auto;
     }
 
     .logo-container {
@@ -47,7 +58,7 @@
 
     .logo-container img.logo {
       display:block;
-      max-width:120px;
+      width:120px; /* ensure both logos are identical size */
       height:auto;
       border:0;
     }
@@ -66,6 +77,7 @@
       height:auto;
       max-width:100%;
       border:0;
+      margin-top:0.75rem;
     }
 
     /* Abstract block */
@@ -80,24 +92,35 @@
       box-sizing:border-box;
     }
 
-    @media (max-width:480px) {
-      .logo-container img.logo { max-width:80px; }
-      .logo-text { font-size:0.8rem; }
-      .page-title { font-size:1.3rem; }
+    @media (max-width:768px) {
+      .top-row { flex-direction:column; align-items:center; }
+      .page-title { text-align:center; font-size:1.25rem; }
+      .page-header { margin-top:0.5rem; }
+      .logo-container img.logo { width:100px; }
+      .logo-text { font-size:0.85rem; }
     }
   </style>
 </head>
 <body>
   <div class="wrap">
 
-    <!-- Two right-aligned logos at very top -->
-    <header class="page-header" aria-label="Page header">
-      <div class="logo-container">
-        <img class="logo" src="www/FHRG_logo.png" alt="Forest Hydrology Research Group logo" />
-      </div>
-    </header>
+    <!-- Top row: title with logos at same level -->
+    <div class="top-row">
+      <h1 class="page-title">
+        Keeble et al., 2025. Untethered from earthly constraints: A spatial seven-day ahead machine-learning forest fuel moisture forecasting system, independent of real-time sensor networks
+      </h1>
 
-    <!-- Title under logos -->
+      <header class="page-header" aria-label="Page header">
+        <div class="logo-container">
+          <img class="logo" src="wiinya_logo.png" alt="Wiinya Environmental Research Group logo" />
+          <div class="logo-text">Wiinya
+Environmental Research Group</div>
+        </div>
+        <div class="logo-container">
+        <img class="logo" src="FHRG_logo.png" alt="Forest Hydrology Research Group logo" />
+      </div>
+      </header>
+    </div>
     <h1 class="page-title">
       Keeble et al., 2025. Untethered from earthly constraints: A spatial seven-day ahead machine-learning forest fuel moisture forecasting system, independent of real-time sensor networks
     </h1>
@@ -105,16 +128,22 @@
     <!-- Two right‑aligned logos -->
     <header class="page-header" aria-label="Page header">
       <div class="logo-container">
-        <img class="logo" src="www/wiinya_logo.png" alt="Wiinya Environmental Research Group logo" />
+        <img class="logo" src="wiinya_logo.png" alt="Wiinya Environmental Research Group logo" />
         <div class="logo-text">Wiinya
 Environmental Research Group</div>
+      </div>
+      <div class="logo-container">
+        <img class="logo" src="FHRG_logo.png" alt="Flinders Human–Environment Research Group logo" />
+        <div class="logo-text">Flinders
+Human–Environment
+Research Group</div>
       </div>
     </header>
 
     <!-- Forecast GIF -->
     <img
       class="responsive"
-      src="www/7day_forecast.gif"
+      src="7day_forecast.gif"
       alt="Seven‑day ahead machine‑learning forest fuel moisture forecast animation"
     />
 
