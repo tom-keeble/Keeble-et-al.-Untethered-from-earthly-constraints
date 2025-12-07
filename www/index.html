@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Keeble et al., 2025 – Seven‑day Forecast</title>
+  <style>
+    html,body { height:100%; margin:0; }
+    body {
+      display:flex;
+      justify-content:center;
+      background:#fff;
+      font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      padding:1rem;
+      box-sizing:border-box;
+    }
+    .wrap {
+      width:100%;
+      max-width:1200px;
+    }
+
+    /* Title at top */
+    .page-title {
+      text-align:center;
+      font-size:1.6rem;
+      margin:0 0 1rem 0;
+      color:#111;
+      font-weight:600;
+    }
+
+    /* Two logos aligned to the right */
+    .page-header {
+      display:flex;
+      justify-content:flex-end;
+      gap:1.5rem;
+      margin-bottom:1rem;
+    }
+
+    .logo-container {
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:0.35rem;
+      line-height:1.05;
+    }
+
+    .logo-container img.logo {
+      display:block;
+      max-width:120px;
+      height:auto;
+      border:0;
+    }
+
+    .logo-text {
+      font-size:0.9rem;
+      color:#111;
+      font-weight:600;
+      text-align:center;
+      white-space:pre-line;
+    }
+
+    img.responsive {
+      display:block;
+      width:100%;
+      height:auto;
+      max-width:100%;
+      border:0;
+    }
+
+    /* Abstract block */
+    .abstract {
+      max-width:100%;
+      margin:1.5rem auto 0 auto;
+      font-size:1rem;
+      line-height:1.45;
+      color:#111;
+      text-align:center;
+      padding:0 0.5rem;
+      box-sizing:border-box;
+    }
+
+    @media (max-width:480px) {
+      .logo-container img.logo { max-width:80px; }
+      .logo-text { font-size:0.8rem; }
+      .page-title { font-size:1.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- Title at top -->
+    <h1 class="page-title">
+      Keeble et al., 2025. Untethered from earthly constraints: A spatial seven‑day ahead machine‑learning forest fuel moisture forecasting system, independent of real‑time sensor networks
+    </h1>
+
+    <!-- Two right‑aligned logos -->
+    <header class="page-header" aria-label="Page header">
+      <div class="logo-container">
+        <img class="logo" src="wiinya_logo.png" alt="Wiinya Environmental Research Group logo" />
+        <div class="logo-text">Wiinya
+Environmental Research Group</div>
+      </div>
+      <div class="logo-container">
+        <img class="logo" src="FHRG_logo.png" alt="Forest Hydrology Research Group logo" />
+        <div class="logo-text">Forest Hydrology Research Group</div>
+      </div>
+    </header>
+
+    <!-- Forecast GIF -->
+    <img
+      class="responsive"
+      src="7day_forecast.gif"
+      alt="Seven‑day ahead machine‑learning forest fuel moisture forecast animation"
+    />
+
+    <!-- Abstract placeholder (user to fill) -->
+    <div class="abstract">
+      <p><em>Dead fuel moisture content (DFMC) critically influences wildfire behaviour, and its modelling underpins many fire management decision support systems. Recent modelling advances have enabled accurate forecast of point-scale fuel moisture, but their reliance on continuous real-time sensor functionality creates operational vulnerabilities when sensors may fail. Maintaining sensor networks across large, remote domains is costly and unreliable. Therefore, we developed a spatially continuous DFMC forecast system that eliminates real-time sensor dependency by replacing sensor initialisation with remotely sensed and modelled proxies for landscape fuel moisture states. Using 23,354 site-day observations from 27 forested sites in Victoria, Australia, our machine learning model produces 7-day ahead sub-canopy DFMC forecasts with median RMSE of 11.5% and 12.8% for day 1 and 7. The approach delivers reliable spatial forecasts across forested landscapes without sensor-dependent vulnerabilities, representing a significant advancement in operational fire risk management by providing comprehensive coverage for wildfire suppression planning and prescribed burning.</em></p>
+    </div>
+  </div>
+</body>
+</html>
