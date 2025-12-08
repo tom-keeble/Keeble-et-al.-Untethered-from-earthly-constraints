@@ -2,7 +2,7 @@
 
 A repository which holds the shareable scripts associated with the maunscript "Untethered from earthly constraints: A spatial seven-day ahead machine-learning forest fuel moisture forecasting system, independent of real-time sensor networks" by Keeble et al. Note, however, that due to various ownership, copyright and permission barriers, the authors are unable to share the trained models or the input datasets. Despite this, we provide templates for input data structures and a script which details the leave-site-out method utilised so as to adhere to open research principles as best we can amidst the outlined limitations.
 
-For the animated example referred to in the Data Availability section of the manuscript, please see [link title](link).
+For the animated example referred to in the Data Availability section of the manuscript, please see [https://tom-keeble.github.io/Keeble-et-al.-Untethered-from-earthly-constraints/](https://tom-keeble.github.io/Keeble-et-al.-Untethered-from-earthly-constraints/).
 
 
 ## Abstract
